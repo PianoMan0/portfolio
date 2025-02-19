@@ -1,0 +1,560 @@
+<html>
+<head>
+<meta charset="UTF-8" />
+
+<style id="webmakerstyle">
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+:root{
+	--main-background: black;
+	--main-fonts-color: #fff;
+	--main-decor-color:#00a9e2;
+    --main-header-background:#21252e;
+	--main-font-family: 'Poppins', sans-serif;
+}
+
+*{
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+}
+
+main{
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	background: black;
+}
+
+#actualportfolio p {
+  color: #fff;
+  text-align: center;
+}
+
+#actualportfolio {
+   background-color: black;
+}
+	
+#FAQs p {
+  color: #fff;
+  text-align: center;
+  
+}
+
+#FAQs {
+   background-color: black;
+}
+
+#portfolio {
+   background-color: black;
+}
+
+header{
+	margin: 0 auto;
+	width: 100%;
+	height: 70px;
+	display: flex;
+    align-items: center; 
+	justify-content: space-around; 
+    background: transparent;
+	position: fixed;
+	top: 0;
+	transition: 0.3s;
+	z-index: 5;
+}
+.nav-show{
+	opacity: 0;
+}
+
+header:hover{
+	opacity: 1;
+	background: var(--main-header-background);
+}
+
+
+.nav-bar{
+	list-style:none;
+	position: relative;
+	display: inline-flex;
+}
+
+a.nav-link{
+	margin: 2px;
+	padding: 5px 10px;
+	text-decoration: none;
+	color: var(--main-fonts-color);
+	font-family: var(--main-font-family);
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+.active{
+	background: var(--main-decor-color);
+}
+
+.nav-link:hover {
+	color: #000000;
+    background: var(--main-decor-color);
+}
+
+
+#home{ 	
+	margin: auto;
+	height: 100vh;
+	color: var(--main-fonts-color);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+#home .filter{
+	background: url('https://images.unsplash.com/photo-1544099858-75feeb57f01b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat;
+	background-size: cover;
+	background-position:center;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	opacity:.20;
+}  
+
+.intro {
+	text-align:center;
+    color: var(--main-fonts-color);
+	z-index: 1;
+	margin: auto;
+	padding: 20px;
+}
+
+.intro  p{
+    margin: 5px;
+	font-size:1.2rem;
+	font-family: var(--main-font-family);
+	text-align:center;
+}
+
+ h3{
+	padding-bottom: 15px;
+    letter-spacing: normal;
+    font-family: var(--main-font-family);
+	font-style: normal;
+	font-size: 60px;
+	color: var(--main-fonts-color);
+	text-shadow: 0px 0px 40px var(--main-decor-color);
+   text-align: center;
+}
+
+
+
+#projects{
+	margin-top:100px;
+    height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    justify-content: center;
+	text-align:center;
+	color: var(--main-fonts-color);
+}
+#projects h3{
+    padding-top: 70px;
+}
+#projects p{
+	font-family: var(--main-font-family);
+	font-size:1.2rem;
+	padding: 10px;
+}
+
+.work{
+	display: flex; 
+	flex: 1;
+    flex-wrap: wrap;
+    justify-content:center;
+	align-items: center;
+	padding: 20px;
+}
+
+.card{
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+	width: 200px;
+	height:250px;
+	border-radius:12px;
+    background:var(--main-decor-color);
+}
+
+.card img{
+	width: 100%;
+	height:70%;
+	border-radius:10px 10px 0px 0px;
+}
+
+
+.card .work-content{
+	text-align: center;
+	padding: 10px 5px;
+	font-size: 1rem;
+	color: var(--main-fonts-color);
+	font-family: var(--main-font-family);
+	cursor: pointer;
+}
+
+.card a{
+	text-decoration: none;
+}
+
+.card .work-content:hover{
+    color:#202020;
+}
+
+.work-img {
+  object-fit: cover;
+  background-color: white;
+}
+
+.card:hover{
+	box-shadow: 0 0 1.5rem gray;
+}
+
+.bigcard {
+  width: 600px;
+  height: fit-content;
+  
+}
+  .bigcard h3 {
+      padding-left: 10px;
+    font-size: 30px;
+    padding-bottom: 0;
+    }
+  .bigcard h4 {
+    font-family: var(--main-font-family);
+    
+      padding-left: 10px;
+    font-size: 20px;
+    padding-bottom: 0;
+    }
+
+
+
+
+
+#portfolio,
+#contact{
+	margin: auto;
+	padding-bottom: 20px;
+	height: 900px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: var(--main-fonts-color);
+}
+#portfolio p,
+#contact p{
+	padding:10px;
+	text-align:center;
+	font-size:1.2rem;
+	font-family: var(--main-font-family);
+}
+
+
+#portfolio {
+  height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .bigcard {
+  width: 400px;
+ 
+}
+
+  #portfolio {
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .bigcard {
+  width: 200px;
+}
+}
+#contact {
+    background-color: var(--main-background);
+}
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ 
+       footer
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+
+footer {
+	width: 100%;
+	height: 100%;
+    background-color: var(--main-header-background);
+}
+
+.copyright {
+	color: #fff;
+	font-size: 1.2rem;
+	line-height: 40px;
+	text-align: center;
+}
+
+.copyright a{
+	color: #fff;
+	font-size: 1rem;
+	letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.copyright a:hover{
+	color: var(--main-decor-color);
+}
+
+/*â”€â”€â”€â”€ hr â”€â”€â”€â”€â”€*/
+
+hr {
+    background: var(--main-decor-color);
+	margin: 2px;
+	height: 3px;
+	width: 150px;
+    border-radius:5px;
+	border: hidden;
+	margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ 
+     Scrollbar
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+::-webkit-Scrollbar{
+    width: 5px; 
+	background: rgba(5,5,5,1);
+}
+::-webkit-Scrollbar-thumb{
+	border-radius: 10px;
+	background: var(--main-decor-color);
+	box-shadow: inset 0 0 20px var(--main-decor-color);
+}
+::-webkit-Scrollbar-track{
+	margin-top: 80px;
+	border-radius: 10px;
+}
+
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ 
+     hamburger
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+.hamburger {
+	display: none;
+}
+
+.hamburger div{
+	width: 30px;
+	height: 3px;
+	background: #dbdbdb;
+	margin: 5px;
+	transition:all 0.3s ease;
+}
+
+.toggle .line1{
+	transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+	opacity: 0;
+}
+
+.toggle .line3{
+	transform: rotate(45deg) translate(-5px,-6px);
+}
+
+@keyframes navLinkFade{
+	from{
+		opacity:0;
+		transform: translatex(50px);
+	}
+	to{
+		opacity: 1;
+		transform:translatex(0px);
+	}
+}
+
+/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ 
+    media queries
+â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+
+@media only screen and (max-width: 1484px) and (min-width: 1214px) {
+	.work{
+        padding:20px 20%;
+    }
+}
+@media only screen and (max-width: 1214px) and (min-width: 1000px) {
+	.work{
+        padding:20px 12%;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+
+	#home, #projects, #contact{
+        overflow-x: hidden;
+	}
+	header{
+		background-color: var(--main-header-background);
+	}
+	.logo{
+		position:absolute;
+		top: 2px;
+		left: 30px;
+	}
+	.nav-show{
+		opacity: 1;
+	}	 
+	.nav-bar{
+		position:fixed;
+		top: 0px;
+		right:0;
+		width:60%;
+		height: 100vh;
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content:space-evenly;
+		background:var(--main-header-background);
+		transform:translatex(100%);
+		transition: transform 0.5s ease-in;
+		z-index: -1;
+	}
+	.hamburger{
+		position:absolute;
+		top: 17px;
+		right: 25%;
+		display: block;
+		cursor:pointer;
+		z-index: 5;
+	}	
+	.nav-bar li{
+		opacity:0;
+	}
+}
+
+.nav-active{
+	transform:translatex(0%);
+}
+
+</style>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width">
+      <title>PianoMan0</title>
+      <link href="style.css" rel="stylesheet" type="text/css" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+      <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Repl.it_logo.svg/220px-Repl.it_logo.png">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="script.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7521133370246243"
+     crossorigin="anonymous"></script>
+
+
+
+
+    
+  </head>
+    <body>
+	  
+        <div class="container">
+	  
+	<header>
+		<a class="logo" href="#home">
+      
+		</a>
+		<nav>	
+		 <ul class="nav-bar"><div class="bg"></div>
+			<li><a class="nav-link active" href="#home">Home</a></li>
+				<li><a class="nav-link" href="#aboutme">About Me</a></li>
+        <li><a class="nav-link" href="#actualportfolio">Portfolio</a></li>
+			<li><a class="nav-link" href="#contact">Contact</a></li>
+       <li><a class="nav-link" href="#FAQs">FAQs</a></li>
+		 </ul>
+			
+			<div class="hamburger">
+				<div class="line1"></div>
+            <div class="line2"></div>
+				<div class="line3"></div>
+			</div>
+		</nav>
+	</header>
+	<main>
+	
+	  <div id="home">
+		 <div class="filter"></div>
+		 <section class="intro">
+		  <h3>PianoMan0<hr></h3>		  <p>Hi, I'm PianoMan0. </p>
+		  <p>HTML, CSS, Javascript, Python, Java, PHP, Scratch</p>
+         
+			  
+		
+		 </section>
+	  </div>  
+		
+		 <div id="portfolio">
+       <a name="aboutme" />
+        <h3>About Me</h3><hr>
+				<p>I'm a 15-year-old fullstack developer. I've was coding on <a href="https://scratch.mit.edu">Scratch</a> for a long time before I switched to "actual" programming languages when I was 11. I coded on Replit for 2 years before I quit due to changes. I now primarily code on <a href="https://webmaker.app/app">Webmaker</a> and <a href="https://github.com/pianoman0">Github</a>. I am currently a member of <a href="https://hack.club">HackClub</a>, which is an online community of teens that code together. I'm also looking for a freelance gig and brushing up my PHP skills. </p>
+       
+         
+</div>
+    
+ 
+        
+
+
+            <div id="actualportfolio">
+              <a name="mythemes" />
+            <h3>Portfolio<hr></h3>
+            <p>Note: This will only include paid programming jobs that I've done. Check out my Github to see much more!</p>
+													<br>
+<p>December 2024 - I coded a website for <a href="https://hack.club">HackClub</a>.</p>
+<br>
+            <p>December 2023 - I did some coding for a neighborhood website.</p>
+	  <div id="contact">
+		   <h3>Contact<hr></h3>
+		   <p>I love to code and chat with other people!<br/><br/>You can contact me on <a href="https://github.com/pianoman0">Github</a>.<br/>
+		  </div>
+
+     <div id="FAQs">
+	
+		   <h3>FAQs<hr></h3>
+       <p>Q: Are you on Github?</p>
+       <p>A: Yes! Follow me <a href="https://github.com/pianoman0">@PianoMan0</a>.</p>
+       <br>
+<p>Do you give coding lessons?</p>
+       <p>A: Yes! Contact me for details.</p>
+       <br>
+
+<p>Have you made any hardware projects?</p>
+       <p>A: I've made a bluetooth speaker! More hardware projects coming soon...</p>
+       <br>
+
+
+<p>Q: Are you on Replit?</p>
+       <p>A: I have a <a herf='https://replit.com/@pianoman0'>Replit account</a>. I recently quit due to changes, and only check it every couple months, but back in the day I had over 210 followers.</p>
+       <br>
+       
+       <p>Q: Will you help me with my project?</p>
+      <p>A: Sure, I'd love to!</p>
+       <br/>
+       <br>
+		  </div>
+
+	</main>
+	
+  </div>
+  </body>
+</html>

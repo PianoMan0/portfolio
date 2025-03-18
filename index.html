@@ -61,14 +61,14 @@ header{
 	top: 0;
 	transition: 0.3s;
 	z-index: 5;
+	backdrop-filter: blur(10px);
 }
 .nav-show{
 	opacity: 0;
 }
 
 header:hover{
-	opacity: 1;
-	background: var(--main-header-background);
+	backdrop-filter: blur(30px);
 }
 
 

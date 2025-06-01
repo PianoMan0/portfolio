@@ -5,445 +5,241 @@
 <style id="webmakerstyle">
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-:root{
-	--main-background: black;
-	--main-fonts-color: #fff;
-	--main-decor-color:#00a9e2;
-    --main-header-background:#21252e;
-	--main-font-family: 'Poppins', sans-serif;
+:root {
+    --main-background: black;
+    --main-fonts-color: #fff;
+    --main-decor-color: #00a9e2;
+    --main-header-background: #21252e;
+    --main-font-family: 'Poppins', sans-serif;
+    --section-spacing: 100px;
+    --section-padding: 20px;
 }
 
-*{
-	margin: 0;
-	padding: 0;
-	scroll-behavior: smooth;
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
 }
 
-main{
-	padding: 0;
-	width: 100%;
-	height: 100%;
-	background: black;
+main {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--main-background);
 }
 
-#actualportfolio p {
-  color: #fff;
-  text-align: center;
-}
-
-#actualportfolio {
-   background-color: black;
-}
-	
-#FAQs p {
-  color: #fff;
-  text-align: center;
-  
-}
-
+/* Section Styles */
+#home,
+#portfolio,
+#actualportfolio,
+#contact,
 #FAQs {
-   background-color: black;
+    margin: 0 auto;
+    padding: var(--section-padding) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-fonts-color);
+    background-color: var(--main-background);
+    min-height: 100vh;
 }
 
-#portfolio {
-   background-color: black;
+#home {
+    margin-top: 0;
+    padding-top: 70px;
 }
 
-header{
-	margin: 0 auto;
-	width: 100%;
-	height: 70px;
-	display: flex;
-    align-items: center; 
-	justify-content: space-around; 
+.intro,
+#portfolio p,
+#actualportfolio p,
+#contact p,
+#FAQs p {
+    margin: 0;
+    padding: var(--section-padding);
+}
+
+/* Header Styles */
+header {
+    margin: 0 auto;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
     background: transparent;
-	position: fixed;
-	top: 0;
-	transition: 0.3s;
-	z-index: 5;
-	backdrop-filter: blur(10px);
-}
-.nav-show{
-	opacity: 0;
+    position: fixed;
+    top: 0;
+    transition: 0.3s;
+    z-index: 5;
+    backdrop-filter: blur(10px);
 }
 
-header:hover{
-	backdrop-filter: blur(30px);
+header:hover {
+    backdrop-filter: blur(30px);
 }
 
-
-.nav-bar{
-	list-style:none;
-	position: relative;
-	display: inline-flex;
+/* Navigation Styles */
+.nav-bar {
+    list-style: none;
+    position: relative;
+    display: inline-flex;
 }
 
-a.nav-link{
-	margin: 2px;
-	padding: 5px 10px;
-	text-decoration: none;
-	color: var(--main-fonts-color);
-	font-family: var(--main-font-family);
-	cursor: pointer;
-	text-transform: uppercase;
+.nav-link {
+    margin: 2px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: var(--main-fonts-color);
+    font-family: var(--main-font-family);
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
-.active{
-	background: var(--main-decor-color);
+.active {
+    background: var(--main-decor-color);
 }
 
 .nav-link:hover {
-	color: #000000;
+    color: #000000;
     background: var(--main-decor-color);
 }
 
-
-#home{ 	
-	margin: auto;
-	height: 100vh;
-	color: var(--main-fonts-color);
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-evenly;
+/* Content Styles */
+.intro {
+    text-align: center;
+    color: var(--main-fonts-color);
+    z-index: 1;
+    margin: auto;
+    padding: 20px;
 }
 
-#home .filter{
-	background: url('https://images.unsplash.com/photo-1544099858-75feeb57f01b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat;
-	background-size: cover;
-	background-position:center;
+.intro p {
+    margin: 5px;
+    font-size: 1.2rem;
+    font-family: var(--main-font-family);
+    text-align: center;
+}
+
+h3 {
+    padding-bottom: 15px;
+    letter-spacing: normal;
+    font-family: var(--main-font-family);
+    font-style: normal;
+    font-size: 60px;
+    color: var(--main-fonts-color);
+    text-shadow: 0px 0px 40px var(--main-decor-color);
+    text-align: center;
+}
+
+p {
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: var(--main-font-family);
+}
+
+/* Background Filter */
+.filter {
+    background: url('https://images.unsplash.com/photo-1544099858-75feeb57f01b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat;
+    background-size: cover;
+    background-position: center;
     position: absolute;
-    top: 0px;
+    top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-	opacity:.20;
-}  
-
-.intro {
-	text-align:center;
-    color: var(--main-fonts-color);
-	z-index: 1;
-	margin: auto;
-	padding: 20px;
+    opacity: .20;
 }
 
-.intro  p{
-    margin: 5px;
-	font-size:1.2rem;
-	font-family: var(--main-font-family);
-	text-align:center;
+/* Card Styles */
+.card {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    width: 200px;
+    height: 250px;
+    border-radius: 12px;
+    background: var(--main-decor-color);
 }
 
- h3{
-	padding-bottom: 15px;
-    letter-spacing: normal;
-    font-family: var(--main-font-family);
-	font-style: normal;
-	font-size: 60px;
-	color: var(--main-fonts-color);
-	text-shadow: 0px 0px 40px var(--main-decor-color);
-   text-align: center;
+.card:hover {
+    box-shadow: 0 0 1.5rem gray;
 }
 
-
-
-#projects{
-	margin-top:100px;
-    height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-    justify-content: center;
-	text-align:center;
-	color: var(--main-fonts-color);
-}
-#projects h3{
-    padding-top: 70px;
-}
-#projects p{
-	font-family: var(--main-font-family);
-	font-size:1.2rem;
-	padding: 10px;
+/* FAQ Styles */
+.faq-item {
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 600px;
 }
 
-.work{
-	display: flex; 
-	flex: 1;
-    flex-wrap: wrap;
-    justify-content:center;
-	align-items: center;
-	padding: 20px;
-}
-
-.card{
-	display: flex;
-	flex-direction: column;
-	margin: 20px;
-	width: 200px;
-	height:250px;
-	border-radius:12px;
-    background:var(--main-decor-color);
-}
-
-.card img{
-	width: 100%;
-	height:70%;
-	border-radius:10px 10px 0px 0px;
-}
-
-
-.card .work-content{
-	text-align: center;
-	padding: 10px 5px;
-	font-size: 1rem;
-	color: var(--main-fonts-color);
-	font-family: var(--main-font-family);
-	cursor: pointer;
-}
-
-.card a{
-	text-decoration: none;
-}
-
-.card .work-content:hover{
-    color:#202020;
-}
-
-.work-img {
-  object-fit: cover;
-  background-color: white;
-}
-
-.card:hover{
-	box-shadow: 0 0 1.5rem gray;
-}
-
-.bigcard {
-  width: 600px;
-  height: fit-content;
-  
-}
-  .bigcard h3 {
-      padding-left: 10px;
-    font-size: 30px;
-    padding-bottom: 0;
-    }
-  .bigcard h4 {
-    font-family: var(--main-font-family);
-    
-      padding-left: 10px;
-    font-size: 20px;
-    padding-bottom: 0;
-    }
-
-
-
-
-
-#portfolio,
-#contact{
-	margin: auto;
-	padding-bottom: 20px;
-	height: 900px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	color: var(--main-fonts-color);
-}
-#portfolio p,
-#contact p{
-	padding:10px;
-	text-align:center;
-	font-size:1.2rem;
-	font-family: var(--main-font-family);
-}
-
-
-#portfolio {
-  height: auto;
-}
-
-@media only screen and (max-width: 600px) {
-  .bigcard {
-  width: 400px;
- 
-}
-
-  #portfolio {
-    height: auto;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .bigcard {
-  width: 200px;
-}
-}
-#contact {
-    background-color: var(--main-background);
-}
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ 
-       footer
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
-
-footer {
-	width: 100%;
-	height: 100%;
-    background-color: var(--main-header-background);
-}
-
-.copyright {
-	color: #fff;
-	font-size: 1.2rem;
-	line-height: 40px;
-	text-align: center;
-}
-
-.copyright a{
-	color: #fff;
-	font-size: 1rem;
-	letter-spacing: 1px;
-    text-decoration: none;
-}
-
-.copyright a:hover{
-	color: var(--main-decor-color);
-}
-
-/*â”€â”€â”€â”€ hr â”€â”€â”€â”€â”€*/
-
+/* Horizontal Rule */
 hr {
     background: var(--main-decor-color);
-	margin: 2px;
-	height: 3px;
-	width: 150px;
-    border-radius:5px;
-	border: hidden;
-	margin-inline-start: auto;
-    margin-inline-end: auto;
+    margin: 2px auto;
+    height: 3px;
+    width: 150px;
+    border-radius: 5px;
+    border: hidden;
 }
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ 
-     Scrollbar
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
-::-webkit-Scrollbar{
-    width: 5px; 
-	background: rgba(5,5,5,1);
-}
-::-webkit-Scrollbar-thumb{
-	border-radius: 10px;
-	background: var(--main-decor-color);
-	box-shadow: inset 0 0 20px var(--main-decor-color);
-}
-::-webkit-Scrollbar-track{
-	margin-top: 80px;
-	border-radius: 10px;
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 5px;
+    background: rgba(5,5,5,1);
 }
 
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ 
-     hamburger
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: var(--main-decor-color);
+    box-shadow: inset 0 0 20px var(--main-decor-color);
+}
+
+::-webkit-scrollbar-track {
+    margin-top: 80px;
+    border-radius: 10px;
+}
+
+/* Hamburger Menu */
 .hamburger {
-	display: none;
+    display: none;
 }
-
-.hamburger div{
-	width: 30px;
-	height: 3px;
-	background: #dbdbdb;
-	margin: 5px;
-	transition:all 0.3s ease;
-}
-
-.toggle .line1{
-	transform: rotate(-45deg) translate(-5px,6px);
-}
-
-.toggle .line2{
-	opacity: 0;
-}
-
-.toggle .line3{
-	transform: rotate(45deg) translate(-5px,-6px);
-}
-
-@keyframes navLinkFade{
-	from{
-		opacity:0;
-		transform: translatex(50px);
-	}
-	to{
-		opacity: 1;
-		transform:translatex(0px);
-	}
-}
-
-/*â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ 
-    media queries
-â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€*/
-
-@media only screen and (max-width: 1484px) and (min-width: 1214px) {
-	.work{
-        padding:20px 20%;
-    }
-}
-@media only screen and (max-width: 1214px) and (min-width: 1000px) {
-	.work{
-        padding:20px 12%;
-    }
-}
-
 
 @media only screen and (max-width: 500px) {
+    .hamburger {
+        position: absolute;
+        top: 17px;
+        right: 25%;
+        display: block;
+        cursor: pointer;
+        z-index: 5;
+    }
 
-	#home, #projects, #contact{
-        overflow-x: hidden;
-	}
-	header{
-		background-color: var(--main-header-background);
-	}
-	.logo{
-		position:absolute;
-		top: 2px;
-		left: 30px;
-	}
-	.nav-show{
-		opacity: 1;
-	}	 
-	.nav-bar{
-		position:fixed;
-		top: 0px;
-		right:0;
-		width:60%;
-		height: 100vh;
-		display:flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content:space-evenly;
-		background:var(--main-header-background);
-		transform:translatex(100%);
-		transition: transform 0.5s ease-in;
-		z-index: -1;
-	}
-	.hamburger{
-		position:absolute;
-		top: 17px;
-		right: 25%;
-		display: block;
-		cursor:pointer;
-		z-index: 5;
-	}	
-	.nav-bar li{
-		opacity:0;
-	}
+    .nav-bar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        background: var(--main-header-background);
+        transform: translatex(100%);
+        transition: transform 0.5s ease-in;
+        z-index: -1;
+    }
+
+    .nav-bar li {
+        opacity: 0;
+    }
+
+    .nav-active {
+        transform: translatex(0%);
+    }
 }
-
-.nav-active{
-	transform:translatex(0%);
-}
-
 </style>
 </head>
   <head>
@@ -493,28 +289,23 @@ hr {
 		 <div class="filter"></div>
 		 <section class="intro">
 		  <h3>PianoMan0<hr></h3>		  <p>Hi, I'm PianoMan0. </p>
-		  <p>HTML, CSS, Javascript, Python, Java, PHP, Typescript, Scratch</p>
+		  <p>HTML, CSS, Javascript, Python, Java, PHP, Scratch</p>
          		      <div id="webring-wrapper">
   <a href="https://webring.hackclub.com/" id="previousBtn" class="webring-anchor" title="Previous">‹</a>
   <a href="https://webring.hackclub.com/" class="webring-logo" title="Hack Club Webring" alt="Hack Club Webring"></a>
   <a href="https://webring.hackclub.com/" id="nextBtn" class="webring-anchor" title="Next">›</a>
   <script src="https://webring.hackclub.com/embed.min.js"></script>
 </div>
-			  
-		
+
 		 </section>
-	  </div>  
-		
-		 <div id="portfolio">
-       <a name="aboutme" />
+	  </div>
+
+	<div id="portfolio">
+        <a name="aboutme" />
         <h3>About Me</h3><hr>
 				<p>I'm a 15-year-old fullstack developer. I was coding on <a href="https://scratch.mit.edu">Scratch</a> for a long time before I switched to "actual" programming languages when I was 11. I coded on Replit for 2 years before I quit due to changes. I now primarily code on <a href="https://webmaker.app/app">Webmaker</a> and <a href="https://github.com/pianoman0">Github</a>. I am currently a member of <a href="https://hack.club">Hack Club</a>, which is an online community of teens that code together. I recently ran an event for Hack Club called <a href="http://hacklet.hackclub.com">Hacklet</a>. We received 100 submissions and gave over hundreds of dollars in prizes. I'm also looking for a freelance gig and brushing up my PHP skills. </p>
-       
-         
+
 </div>
-    
- 
-        
 
 
             <div id="actualportfolio">
@@ -536,11 +327,11 @@ hr {
        <p>Q: Are you on Github?</p>
        <p>A: Yes! Follow me <a href="https://github.com/pianoman0">@PianoMan0</a>.</p>
        <br>
-<p>Do you give coding lessons?</p>
+<p>Q: Do you give coding lessons?</p>
        <p>A: Yes! Contact me for details.</p>
        <br>
 
-<p>Have you made any hardware projects?</p>
+<p>Q: Have you made any hardware projects?</p>
        <p>A: I've made a bluetooth speaker! I'm currently making a smart home voice assistant for <a href="https://highway.hackclub.com">Highway</a>, a Hack Club <a href="https://ysws.hackclub.com">YSWS</a></p>
        <br>
 

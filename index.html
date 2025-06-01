@@ -34,7 +34,7 @@ main {
 #actualportfolio,
 #contact,
 #FAQs {
-    margin: var(--section-spacing) auto;
+    margin: 0 auto;
     padding: var(--section-padding) 0;
     display: flex;
     flex-direction: column;
@@ -42,11 +42,21 @@ main {
     justify-content: center;
     color: var(--main-fonts-color);
     background-color: var(--main-background);
+    min-height: 100vh;
 }
 
 #home {
     margin-top: 0;
-    height: 100vh;
+    padding-top: 70px;
+}
+
+.intro,
+#portfolio p,
+#actualportfolio p,
+#contact p,
+#FAQs p {
+    margin: 0;
+    padding: var(--section-padding);
 }
 
 /* Header Styles */

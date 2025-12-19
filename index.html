@@ -1,13 +1,29 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="PianoMan0's Personal Website" />
+<meta name="keywords" content="PianoMan0, personal, website, portfolio, developer, programmer" />
+<meta name="author" content="PianoMan0" />
+<meta name="theme-color" content="#000000"/>
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://pianoman0.com" />
+<meta property="og:image" content="https://hc-cdn.hel1.your-objectstorage.com/s/v3/b71a200c6204350ad371a1446651970608fae0b3_image.png" />
 
-<style id="webmakerstyle">
+
+<title>PianoMan0</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+<link rel="icon" href="pianoman0newprofilepic.png">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="script.js"></script>
+<style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 :root {
-    --main-background: black;
-    --main-fonts-color: #fff;
+    --main-background: #000000;
+    --main-fonts-color: white;
     --main-decor-color: #00a9e2;
     --main-header-background: #21252e;
     --main-font-family: 'Poppins', sans-serif;
@@ -15,21 +31,36 @@
     --section-padding: 20px;
 }
 
-* {
+html, body {
+    height: auto;
+    min-height: 100%;
+    width: 100%;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
+    background: var(--main-background);
+    color: var(--main-fonts-color);
+    font-family: var(--main-font-family);
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body {
+    position: relative;
 }
 
 main {
-    padding: 0;
     width: 100%;
-    height: 100%;
     background: var(--main-background);
 }
 
 /* Section Styles */
-#home,
+#home {
+    margin-top: 0;
+    padding-top: 70px;
+    position: relative;
+    min-height: 100vh;
+}
+
 #portfolio,
 #actualportfolio,
 #contact,
@@ -42,12 +73,13 @@ main {
     justify-content: center;
     color: var(--main-fonts-color);
     background-color: var(--main-background);
-    min-height: 100vh;
+    width: 100%;
 }
 
 #home {
     margin-top: 0;
     padding-top: 70px;
+    position: relative;
 }
 
 .intro,
@@ -94,6 +126,7 @@ header:hover {
     font-family: var(--main-font-family);
     cursor: pointer;
     text-transform: uppercase;
+    border-radius: 5px;
 }
 
 .active {
@@ -105,7 +138,6 @@ header:hover {
     background: var(--main-decor-color);
 }
 
-/* Content Styles */
 .intro {
     text-align: center;
     color: var(--main-fonts-color);
@@ -139,7 +171,6 @@ p {
     font-family: var(--main-font-family);
 }
 
-/* Background Filter */
 .filter {
     background: url('https://images.unsplash.com/photo-1544099858-75feeb57f01b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80') no-repeat;
     background-size: cover;
@@ -150,21 +181,75 @@ p {
     left: 0;
     right: 0;
     opacity: .20;
+    z-index: 0;
 }
 
-/* Card Styles */
+.portfolio-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
 .card {
     display: flex;
     flex-direction: column;
-    margin: 20px;
-    width: 200px;
-    height: 250px;
-    border-radius: 12px;
-    background: var(--main-decor-color);
+    align-items: center;
+    background: var(--main-header-background);
+    border: 2px solid var(--main-decor-color);
+    border-radius: 15px;
+    width: 300px;
+    min-height: 400px;
+    margin: 10px;
+    padding: 20px;
+    transition: box-shadow 0.3s;
 }
 
 .card:hover {
-    box-shadow: 0 0 1.5rem gray;
+    box-shadow: 0 0 1.5rem var(--main-decor-color);
+    transform: translateY(-5px) scale(1.025);
+}
+
+.card img {
+    width: 90%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 2px solid var(--main-decor-color);
+    background: #111;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin: 10px 0 6px 0;
+    color: var(--main-decor-color);
+    text-align: center;
+    font-weight: bold;
+}
+
+.card-desc {
+    font-size: 1rem;
+    color: var(--main-fonts-color);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.card-link {
+    display: inline-block;
+    background: var(--main-decor-color);
+    color: #000;
+    padding: 8px 14px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.card-link:hover {
+    background: #00e2b6;
+    color: #000;
 }
 
 /* FAQ Styles */
@@ -206,6 +291,13 @@ hr {
     display: none;
 }
 
+@media only screen and (max-width: 900px) {
+    .portfolio-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     .hamburger {
         position: absolute;
@@ -227,9 +319,9 @@ hr {
         align-items: center;
         justify-content: space-evenly;
         background: var(--main-header-background);
-        transform: translatex(100%);
+        transform: translateX(100%);
         transition: transform 0.5s ease-in;
-        z-index: -1;
+        z-index: 100;
     }
 
     .nav-bar li {
@@ -237,120 +329,243 @@ hr {
     }
 
     .nav-active {
-        transform: translatex(0%);
+        transform: translateX(0%);
     }
+}
+
+#badges-88x31 {
+    margin: 0 auto;
+    padding: var(--section-padding) 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-fonts-color);
+    background-color: var(--main-background);
+    width: 100%;
+}
+
+#badges-88x31 h3 {
+    font-size: 32px;
+    text-shadow: 0 0 20px var(--main-decor-color);
+}
+
+#badges-88x31 hr {
+    margin-top: 8px;
+}
+
+.badge-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.badge-grid img {
+    width: 88px;
+    height: 31px;
+    image-rendering: pixelated;
+    border-radius: 4px;
+    border: 1px solid var(--main-decor-color);
+    background: #111;
 }
 </style>
 </head>
-  <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width">
-      <title>PianoMan0</title>
-      <link href="style.css" rel="stylesheet" type="text/css" />
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-      <link rel="icon" href="pianoman0newprofilepic.png">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-      <script src="script.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7521133370246243"
-     crossorigin="anonymous"></script>
+<body>
+    <div class="container">
+        <header>
+            <a class="logo" href="#home"></a>
+            <nav>
+                <ul class="nav-bar">
+                    <li><a class="nav-link active" href="#home">Home</a></li>
+                    <li><a class="nav-link" href="#aboutme">About Me</a></li>
+                    <li><a class="nav-link" href="#actualportfolio">Portfolio</a></li>
+                    <li><a class="nav-link" href="#contact">Contact</a></li>
+                    <li><a class="nav-link" href="#FAQs">FAQs</a></li>
+                </ul>
+                <div class="hamburger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div id="home">
+                <div class="filter"></div>
+                <section class="intro">
+                    <h3>PianoMan0<hr></h3>
+                    <p>Hi, I'm PianoMan0.</p>
+                    <p>Teen fullstack developer, coding with community.</p>
+                </section>
+            </div>
 
-
-
-
-    
-  </head>
-    <body>
-	  
-        <div class="container">
-	  
-	<header>
-		<a class="logo" href="#home">
-      
-		</a>
-		<nav>	
-		 <ul class="nav-bar"><div class="bg"></div>
-			<li><a class="nav-link active" href="#home">Home</a></li>
-				<li><a class="nav-link" href="#aboutme">About Me</a></li>
-        <li><a class="nav-link" href="#actualportfolio">Portfolio</a></li>
-			<li><a class="nav-link" href="#contact">Contact</a></li>
-       <li><a class="nav-link" href="#FAQs">FAQs</a></li>
-		 </ul>
-			
-			<div class="hamburger">
-				<div class="line1"></div>
-            <div class="line2"></div>
-				<div class="line3"></div>
-			</div>
-		</nav>
-	</header>
-	<main>
-	
-	  <div id="home">
-		 <div class="filter"></div>
-		 <section class="intro">
-		  <h3>PianoMan0<hr></h3>		  <p>Hi, I'm PianoMan0. </p>
-		  <p>HTML, CSS, Javascript, Python, Java, PHP, Scratch</p>
-         		      <div id="webring-wrapper">
-  <a href="https://webring.hackclub.com/" id="previousBtn" class="webring-anchor" title="Previous">‹</a>
-  <a href="https://webring.hackclub.com/" class="webring-logo" title="Hack Club Webring" alt="Hack Club Webring"></a>
-  <a href="https://webring.hackclub.com/" id="nextBtn" class="webring-anchor" title="Next">›</a>
-  <script src="https://webring.hackclub.com/embed.min.js"></script>
-</div>
-
-		 </section>
-	  </div>
-
-	<div id="portfolio">
-        <a name="aboutme" />
-        <h3>About Me</h3><hr>
-				<p>I'm a 15-year-old fullstack developer. I was coding on <a href="https://scratch.mit.edu">Scratch</a> for a long time before I switched to "actual" programming languages when I was 11. I coded on Replit for 2 years before I quit due to changes. I now primarily code on <a href="https://webmaker.app/app">Webmaker</a> and <a href="https://github.com/pianoman0">Github</a>. I am currently a member of <a href="https://hack.club">Hack Club</a>, which is an online community of teens that code together. I recently ran an event for Hack Club called <a href="http://hacklet.hackclub.com">Hacklet</a>. We received 100 submissions and gave over hundreds of dollars in prizes. I'm also looking for a freelance gig and brushing up my PHP skills. </p>
-
-</div>
-
+            <div id="portfolio">
+                <a name="aboutme"></a>
+                <h3>About Me</h3><hr>
+                <p>I'm a 15-year-old fullstack developer. I was coding on <a href="https://scratch.mit.edu">Scratch</a> for a long time before I switched to "actual" programming languages when I was 11. I coded on Replit for 2 years before I quit due to changes. I now primarily code on VS Code, often using <a href="https://github.com/pianoman0">Github</a> to publish my projects. I am a member of <a href="https://hack.club">Hack Club</a>, which is an online community of teens that code together. I've run a couple of events for Hack Club, like <a href="http://hacklet.hackclub.com">Hacklet</a> and <a href="http://twist.hackclub.dev">Twist</a>. Combined they received over 150 submissions and we gave out thousands of dollars in prizes. I also helped with Hack Club's <a href="https://summer.hackclub.com">Summer of Making</a>, and I'm a member of their <a href="https://hackclub.com/team">team</a>. Recently, I attended Daydream, a worldwide hackathon by Hack Club for teenagers! Right now, I'm working on some new events for Hack Club and coding fun side projects along the way.</p>
+            </div>
 
             <div id="actualportfolio">
-              <a name="mythemes" />
-            <h3>Portfolio<hr></h3>
-            <p>Note: This will only include paid programming jobs that I've done. Check out my <a href="https://github.com/pianoman0">Github</a> to see much more!</p>
-													<br>
-<p>December 2024 - I coded a website for <a href="https://hack.club">Hack Club</a>.</p>
-<br>
-            <p>December 2023 - I did some programming for a neighborhood website.</p>
-	  <div id="contact">
-		   <h3>Contact<hr></h3>
-		   <p>I love to code and chat with other people!<br/><br/>You can contact me on <a href="https://github.com/pianoman0">Github</a>. Plus, if you're a teen, find me on the <a href="https://hackclub.com/slack">Hack Club Slack!</a><br/>
-		  </div>
+                <a name="mythemes"></a>
+                <h3>Portfolio<hr></h3>
+                <p>Here are some of my favorite projects I've built! Click the screenshots or links to check them out.</p>
+                <div class="portfolio-cards">
+                    <!-- Project 1 -->
+                    <div class="card">
+                        <a href="https://github.com/PianoMan0/Billion" target="_blank">
+                            <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/06e00da35ef41b95d2db82bc2a92f6357312b4bc_billionpromo.png" alt="Billion Screenshot"/>
+                        </a>
+                        <div class="card-title">Billion</div>
+                        <div class="card-desc">
+                            A social media platform I've been maintaining for over a year, make a social media site just for your family and friends!
+                        </div>
+                        <a class="card-link" href="https://github.com/PianoMan0/Billion" target="_blank">View Project!</a>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="card">
+                        <a href="https://github.com/Pianoman0/twist" target="_blank">
+                            <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/e2887a1286eb8488a9ec3a1697faccd5702c7bf3_image.png" alt="Twist Screenshot"/>
+                        </a>
+                        <div class="card-title">Twist</div>
+                        <div class="card-desc">
+                            The website for the Hack Club YSWS I ran! Art by Ryan Brandt.
+                        </div>
+                        <a class="card-link" href="https://github.com/PianoMan0/Twist" target="_blank">View Project!</a>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="card">
+                        <a href="https://github.com/PianoMan0/Daydream-Project" target="_blank">
+                            <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/c682b741f35da088ba4c984de3dccf7f1f693ce8_image.png" alt="Clanker World Screenshot"/>
+                        </a>
+                        <div class="card-title">Clanker World</div>
+                        <div class="card-desc">
+                            A game about an AI future, made at Daydream DC, a Hack Club hackathon, with <a href="https://github.com/tailhaver" target="_blank">Taggie</a> and <a href="https://github.com/isa-yan" target="_blank">Isa!</a> We won 2nd place.
+                        </div>
+                        <a class="card-link" href="https://github.com/PianoMan0/Daydream-Project" target="_blank">View Project!</a>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="card">
+                        <a href="https://github.com/PianoMan0/historical-events-near-you" target="_blank">
+                            <img src="https://hc-cdn.hel1.your-objectstorage.com/s/v3/d1a9e244c3c736c694d1820576b1961cf935f045_image.png" alt="Historical Events Near You Screenshot"/>
+                        </a>
+                        <div class="card-title">Historical Events Near You</div>
+                        <div class="card-desc">
+                            Easily find the historical events that took place closest to you!
+                        </div>
+                        <a class="card-link" href="https://github.com/PianoMan0/historical-events-near-you" target="_blank">View Project!</a>
+                    </div>
+                </div>
+                <p>See more on my <a href="https://github.com/PianoMan0">Github profile</a>!</p>
+            </div>
 
-     <div id="FAQs">
-	
-		   <h3>FAQs<hr></h3>
-       <p>Q: Are you on Github?</p>
-       <p>A: Yes! Follow me <a href="https://github.com/pianoman0">@PianoMan0</a>.</p>
-       <br>
-<p>Q: Do you give coding lessons?</p>
-       <p>A: Yes! Contact me for details.</p>
-       <br>
+            <div id="contact">
+                <h3>Contact<hr></h3>
+                <p>I love to code and chat with other people!<br/><br/>
+                You can contact me on <a href="https://github.com/pianoman0">Github</a>.
+                Plus, if you're a teen, find me on the <a href="https://hackclub.com/slack">Hack Club Slack!</a>
+                </p>
+            </div>
 
-<p>Q: Have you made any hardware projects?</p>
-       <p>A: I've made a bluetooth speaker! I'm currently making a smart home voice assistant for <a href="https://highway.hackclub.com">Highway</a>, a Hack Club <a href="https://ysws.hackclub.com">YSWS</a></p>
-       <br>
+            <div id="FAQs">
+                <h3>FAQs<hr></h3>
+                <div class="faq-item">
+                    <p>Q: Are you on Github?</p>
+                    <p>A: Yes! Follow me <a href="https://github.com/pianoman0">@PianoMan0</a>.</p>
+                </div>
+                <div class="faq-item">
+                    <p>Q: Have you made any hardware projects?</p>
+                    <p>A: I've made a bluetooth speaker! I'm mostly a software developer, but I'd love to try more hardware projects in the future.</p>
+                </div>
+                <div class="faq-item">
+                    <p>Q: Are you on Replit?</p>
+                    <p>A: I have a <a href='https://replit.com/@pianoman0'>Replit account</a>. I quit due to changes, and only check it every couple months, but back in the day I had over 210 followers.</p>
+                </div>
+                <div class="faq-item">
+                    <p>Q: Will you help me with my project?</p>
+                    <p>A: Sure, I'd love to!</p>
+                </div>
+            </div>
 
-
-<p>Q: Are you on Replit?</p>
-       <p>A: I have a <a herf='https://replit.com/@pianoman0'>Replit account</a>. I recently quit due to changes, and only check it every couple months, but back in the day I had over 210 followers.</p>
-       <br>
-       
-       <p>Q: Will you help me with my project?</p>
-      <p>A: Sure, I'd love to!</p>
-       <br/>
-       <br>
-		  </div>
-
-		      <br>
-		      <br>
-
-	      </main>
-	
-  </div>
-  </body>
+            <div id="badges-88x31">
+            <h3>88x31s<hr></h3>
+            <div class="badge-grid">
+            <a href="https://vscode.dev" target="_blank">
+            <img src="vscode.gif" alt="Visual Studio Code 88x31 badge">
+            </a>
+            <a href="https://php.net" target="_blank">
+            <img src="php.gif" alt="PHP logo 88x31 badge">
+            </a>
+            <a href="https://pianoman0.com/#">
+            <img src="nowar.png" alt="No War 88x31 peace badge">
+            </a>
+            <a href="https://pianoman0.com/#"">
+            <img src="hackerpowered.gif" alt="Hacker Powered 88x31 badge">
+            </a>
+            <a href="https://pianoman0.com/#"">
+            <img src="gothtml.png" alt="Got HTML 88x31 web button">
+            </a>
+            <a href="https://github.com/pianoman0" target="_blank">
+            <img src="github.png" alt="GitHub logo 88x31 badge">
+            </a>
+            <a href="https://pianoman0.com/#">
+            <img src="nb_noproblem.jpg" alt="Non-binary no problem 88x31 badge">
+            </a>
+            <a href="https://pianoman0.com/#">
+            <img src="stopmicrosoft.gif" alt="Stop Microsoft 88x31 badge">
+            </a>
+            <a href="https://pianoman0.com/#">
+            <img src="transrights.png" alt="Pride rights 88x31 badge">
+            </a>
+            <a href="https://pianoman0.com/#">
+            <img src="htmllearnittoday.gif" alt="Learn HTML today 88x31 badge">
+            </a>
+            <a href="https://pianoman0.com/#">
+            <img src="nonazis.gif" alt="No Nazis 88x31 badge">
+            </a>
+            <a href="https://pianoman0.com/#">
+            <img src="minecraft.gif" alt="Minecraft 88x31 badge">
+            </a>
+            <a href="https://pianoman0.com/#">
+            <img src="dreaminhtml.gif" alt="Dreaming in HTML 88x31 badge">
+            </a>
+            <a href="https://pianoman0.com/#">
+            <img src="ihatemicrosoft.gif" alt="Anti-Microsoft 88x31 badge">
+            </a>
+            <a href="https://pianoman0.com/#">
+            <img src="javascriptnow.png" alt="JavaScript Now 88x31 badge">
+            </a>
+            <a href="https://pianoman0.com/#">
+            <img src="supportwikipedia.gif" alt="Support Wikipedia 88x31 badge">
+            </a>
+            <a href="https://hack.club" target="_blank">
+            <img src="hackclub.gif" alt="Hack Club 88x31 badge">
+            </a>
+            <a href="https://lynn.pt" target="_blank">
+            <img src="lynn.png" alt="Lynn 88x31 personal badge">
+            </a>
+            <a href="https://ivie.codes" target="_blank">
+            <img src="ivie.png" alt="Ivie 88x31 personal badge">
+            </a>
+            <a href="https://3kh0.net" target="_blank">
+            <img src="temp_3kh0.png" alt="3kh0 88x31 personal badge">
+            </a>
+            <a href="https://skyfall.dev" target="_blank">
+            <img src="mahad.png" alt="Mahad 88x31 personal badge">
+            </a>
+            <a href="https://bunnyguy.foo" target="_blank">
+            <img src="bunnyguy.gif" alt="Pixel bunny character 88x31 badge">
+            </a>
+            <a href="https://hack.app" target="_blank">
+            <img src="nest.png" alt="Nest 88x31 personal badge">
+            </a>
+            </div>
+            </div>
+        </main>
+    </div>
+</body> 
 </html>
